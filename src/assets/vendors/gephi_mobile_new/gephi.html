@@ -1,0 +1,262 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./combo.select.css">
+  <style type="text/css">
+    #sigma-container {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      position: fixed;
+      /*background-color: rgb(45,45,45);*/
+      top: 40px;
+    }
+    .typeBtn {
+      width: 45%;
+      float: left;
+      text-align: center;
+      height: 50px;
+      /*background-color: rgb(45,45,45);*/
+      color: #FFFFFF;
+      font-size: 30px;
+      cursor:pointer;
+    }
+    .btn {
+      width: 25%;
+      float: right;
+      text-align: center;
+      /*background-color: rgb(45,45,45);*/
+      color: #FFFFFF;
+      font-size: 26px;
+      cursor:pointer;
+    }
+    .focus {
+      color: #CF7811;
+    }
+    .combo-select {
+      position: absolute !important;
+      font-size: 16px !important;
+    }
+    .combo-input {
+      color:#fff;
+      padding:4px !important;
+      border-style: solid ;
+      border-width: 1px;
+      border-color: #d2d2d2;
+      border-radius: 4px;
+      background-color: transparent;
+      /* background-image: -moz-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%); */
+      /* background-image: -webkit-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%); */
+      /* background-image: -ms-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%); */
+    }
+    .combo-input:focus {
+      background-color:transparent !important;
+    }
+    .combo-dropdown li {
+      padding: 3px 1em !important;
+      background-color:transparent !important;
+    }
+    .combo-dropdown {
+      max-height:400px;
+      border-style: solid !important;
+      border-width: 1px !important;
+      border-color: #d2d2d2 !important;
+      border-radius: 4px !important;
+      background-color: transparent;
+      /* background-image: -moz-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%) !important;
+      background-image: -webkit-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%) !important;
+      background-image: -ms-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%) !important; */
+    }
+    .option-hover,.option-item {
+      background-color: transparent;
+      /* background-image: -moz-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+      background-image: -webkit-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+      background-image: -ms-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%); */
+      color:#fff;
+      font-size: 16px;
+    }
+    .combo-arrow,.combo-arrow:hover {
+      background: transparent;
+    }
+    .select2-container {
+      position: absolute !important;
+    }
+    .select2-container--default .select2-selection--single,.select2-dropdown {
+      border-style: solid ;
+      border-width: 1px;
+      border-color: rgb(128, 128, 128);
+      border-radius: 4px;
+      background-image: -moz-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+      background-image: -webkit-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+      background-image: -ms-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+    }
+    .select2-results__options {
+      color:#fff;
+    }
+    .select2-results__option[aria-selected],.select2-container--default .select2-results__group {
+      font-size: 16px;
+    }
+    .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{
+      border-color: transparent transparent #fff transparent !important;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered{
+      line-height: 24px !important;
+      font-size: 16px !important;
+      color:#fff !important;
+    }
+    .select2-container--default .select2-results__option[aria-selected=true],.select2-container--default .select2-results__option--highlighted[aria-selected] {
+      background-color: transparent;
+      background-image: -moz-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+      background-image: -webkit-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+      background-image: -ms-linear-gradient( 90deg, rgb(46,46,47) 0%, rgb(71,71,71) 100%);
+      color:#fff;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<select id="mobileSelect" class="js-states form-control" style="width:10%;margin-left:5%;margin-top:2%;" onchange="setType(this)"></select>
+<div>
+  <div id="btn2016" class="btn focus" onclick="changeTo(2016);">2016</div>
+  <div id="btn2015" class="btn" onclick="changeTo(2015);">2015</div>
+  <div id="btn2014" class="btn" onclick="changeTo(2014);">2014</div>
+</div>
+<div id="sigma-container" style="width:100%;height:330px"></div>
+
+<script src="../jquery-1.11.0.min.js"></script>
+<script src="./jquery.combo.select.js"></script>
+<script src="../echarts.min.js"></script>
+<script type="text/javascript" src="./json.min.js"></script>
+<script>
+  var selectArr = ['小米','三星','华为','苹果','联想','酷派','步步高','OPPO','中兴','金立','魅族'];
+  var myChart =echarts.init(document.getElementById('sigma-container'));
+  $(function(){
+    $.each(selectArr,function(){
+      $("#mobileSelect").append("<option>"+this+"</option>");
+    });
+    $("#mobileSelect").comboSelect();
+  });
+  var type = selectArr[0];
+  function setType(obj){
+    type = $(obj).find("option:selected").text();
+    changeTo(2016);
+  };
+  function changeTo(date){
+    $('#btn2014').removeClass('focus');
+    $('#btn2015').removeClass('focus');
+    $('#btn2016').removeClass('focus');
+    $('#btn'+date).addClass('focus');
+    var json = eval(type+date);
+    var universalVariable = {
+      "colorArr":['#0292f4','#ff030b','#d2d508','#02c5b5','#fd6a02','#06b42f','#cea969','#cb2ef2','#1d58df','#c2c2c2','#0ca76a','#a56043'],
+      "colorObj":{},
+      "legendName":[],
+      "legendColor":[]
+    };
+    var result = {
+      "categories":[],
+      "nodes": [],
+      "edges": []
+    };
+    for(var i in json.gexf.graph.nodes.node){
+      var node = json.gexf.graph.nodes.node[i];
+      universalVariable.colorObj[node["-id"]] = "rgb("+node["viz:color"]["-r"]+","+node["viz:color"]["-g"]+","+node["viz:color"]["-b"]+")";
+      if(type == "酷派"){
+        universalVariable.legendName.push(node["attvalues"]["attvalue"][node["attvalues"]["attvalue"].length-1]["-value"]);
+      }else{
+        universalVariable.legendName.push(node["attvalues"]["attvalue"][0]["-value"]);
+      }
+      universalVariable.legendColor.push("rgb("+node["viz:color"]["-r"]+","+node["viz:color"]["-g"]+","+node["viz:color"]["-b"]+")");
+    };
+    $.unique(universalVariable.legendName);
+    $.unique(universalVariable.legendColor);
+    $.each(universalVariable.legendName,function(index){
+      result.categories.push({
+        "name":universalVariable.legendName[index]
+      })
+    });
+
+    for(var i in json.gexf.graph.nodes.node){
+      var node = json.gexf.graph.nodes.node[i];
+      result.nodes.push({
+        "name": node["-label"],
+        "y": node["viz:position"]["-y"],
+        "x": node["viz:position"]["-x"],
+        "id": node["-id"],
+        "category":(type == "酷派")?$.inArray(node["attvalues"]["attvalue"][node["attvalues"]["attvalue"].length-1]["-value"], universalVariable.legendName):$.inArray(node["attvalues"]["attvalue"][0]["-value"], universalVariable.legendName),
+        "symbolSize": node["viz:size"]["-value"]*2,
+
+        "label": {
+          "normal": {
+            "color": (node["-id"] == 1) ? "#000" : "auto",
+            "position": (node["-id"] == 1) ? "inside" : "right"
+          },
+          "emphasis": {
+            "color": (node["-id"] == 1) ? "#000" : "auto",
+            "position": (node["-id"] == 1) ? "inside" : "right"
+          }
+        }
+      });
+    };
+
+    for(var i in json.gexf.graph.edges.edge){
+      var edge = json.gexf.graph.edges.edge[i];
+      result.edges.push({
+        "source": edge["-source"],
+        "target": edge["-target"],
+        "lineStyle": {
+          "normal": {
+            "width": edge["-weight"]/5000,
+            "color":universalVariable.colorArr[$.inArray(universalVariable.colorObj[edge["-source"]],universalVariable.legendColor)]
+          }
+        }
+      });
+    };
+    universalVariable.legendName.shift();
+    option = {
+      color:universalVariable.colorArr,
+      backgroundColor: 'transparent',
+      legend: {
+        data: universalVariable.legendName,
+        orient: 'vertical',
+        right:'10',
+        bottom:'20',
+        textStyle: {
+          color:'#9b9b9b',
+          fontSize: 16,
+          fontWeight: "bold"
+        }
+      },
+      series : [
+        {
+          type: 'graph',
+          layout: 'none',
+          // progressiveThreshold: 700,
+          nodes:result.nodes,
+          edges:result.edges,
+          categories:result.categories,
+          roam: true,
+          focusNodeAdjacency: true,
+          label: {
+            normal: {
+              show: true,
+              fontSize: 18,
+              color: 'auto'
+            },
+            emphasis: {
+              show: true,
+              fontSize: 18,
+              color: 'auto'
+            }
+          }
+        }
+      ]
+    }
+    myChart.clear();
+    myChart.setOption(option);
+
+  }
+  changeTo(2016);
+</script>
+<!-- [...] -->
+</body>
+</html>

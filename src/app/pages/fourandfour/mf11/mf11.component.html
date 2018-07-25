@@ -1,0 +1,12 @@
+<do-frame leftTitle="工业网络产业发展态势" [menubarNone]=false>
+    <do-container smallTitle="主要网络协议技术市场份额" dataComing="IHS" [optionType]="trendLine" [theme]="theme" [showEcharts]="showEcharts"
+      style="float:left">
+    </do-container>
+    <do-container smallTitle="不同生产类型主要协议技术使用技术情况" dataComing="IHS" [optionType]="growthMap" [theme]="theme" [showEcharts]="showEcharts"  style="margin-left:1vh;float:left"></do-container>
+    <do-container smallTitle="工业以太网市场份额" dataComing="Gartne" [theme]="theme" [optionType]="indexLine" [showEcharts]="showEcharts" (btnClicked)=" btnGroupClicked($event)" [tabItems]="tabItemsArr1" 
+    showChangeNorm_type=true style="margin-top:1vh;float:left"></do-container>
+    <do-container smallTitle="不同生产类型工业以太网设备市场规模" dataComing="CIMdata" [showEcharts]="showEcharts" [optionType]="growBarh"  (btnClicked)="btnGroup1Clicked($event)" [tabItems]="tabItemsArr" 
+    showChangeNorm_type=true style="margin-left:1vh;margin-top:1vh;float:left">
+    </do-container>
+  </do-frame>
+  

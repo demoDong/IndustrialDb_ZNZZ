@@ -1,0 +1,14 @@
+<do-frame leftTitle="新一代信息技术(集成电路)" [menubarNone]=false>
+    <do-container smallTitle="我国集成电路产业各环节销售额及增速" dataComing="工信部" [optionType]="leftTop" [theme]="theme" [showEcharts]="showEcharts" style="float:left">
+    </do-container>
+    <do-container smallTitle="集成电路生产力布局" dataComing="工信部" [optionType]="rightTop" [theme]="theme" [showEcharts]="showEcharts" [nameMap]="nameMap" style="margin-left:1vh;float:left">
+    </do-container>
+    <do-container smallTitle="全球和我国晶元产能增长情况" dataComing="工信部" [theme]="theme" [optionType]="leftBottom" [showEcharts]="showEcharts" style="margin-top:1vh;float:left">
+    </do-container>
+    <do-container smallTitle="集成电路产业链" dataComing="中国半导体协会" [showEcharts]="false" style="margin-left:1vh;margin-top:1vh;float:left" showChangeNorm_type=true [tabItems]="tabItemsList" (btnClicked)="btnGroupClicked($event)">
+        <!-- <img class="imgs" src="assets/images/mf22RightBottom.png" />
+     -->
+        <do-echarts [options]="optionLeft" [theme]="theme" style="height:100%; float:left; width:50%;"></do-echarts>
+        <do-echarts [options]="optionRight" [theme]="theme" style="height:100%; float:right; width:50%;"></do-echarts>
+    </do-container>
+</do-frame>

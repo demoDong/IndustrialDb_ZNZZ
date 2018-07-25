@@ -1,0 +1,70 @@
+ .network {
+     /deep/ button.rightBtn {
+         /* display: none; */
+         visibility: hidden;
+     }
+     /deep/ .nw {
+         margin: 0.5vh;
+         float: left;
+     }
+     /deep/ .changeNorm_type {
+         align-content: center !important;
+     }
+     /deep/ .echartWidth #myCharts {
+       width: 65% !important;
+     }
+     .butListNone {
+       display: none;
+     }
+     .butList {
+         width: 31%;
+         position: absolute;
+         left: 69%;
+         top: 8vh;
+         height: 25vh;
+         span {
+             float: left;
+             width: 100%;
+             font-size: 2rem;
+             text-align: center;
+             padding: 1%;
+             margin-top: 1vh;
+             background: #184088;
+             border: 1px solid #296FDE;
+             border-radius: 5px;
+             color: #969696;
+             cursor: pointer;
+         }
+     }
+     .btnActive {
+         color: #fff !important;
+     }
+ }
+ .left {
+     float: left;
+    padding-top: 5%;
+    margin-left: 7%;
+    width: 14%;
+    font-size: 1.6rem;
+ }
+ .right {
+    float: left;
+    width: 37%;
+    padding-top: 5%;
+    padding-left: 9%;
+    font-size: 1.6rem;
+ }
+ .left div {
+     padding-top: 14%;
+     float: left;
+ }
+.netInforSec > do-echarts {
+    width: 40%;
+    float: left;
+}
+.netInforSec {
+    float: left;
+}
+// .right > .rightOne > div > .rigthNumber {
+//     padding-left: 6%;
+// }

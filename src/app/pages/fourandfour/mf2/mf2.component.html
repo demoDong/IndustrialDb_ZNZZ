@@ -1,0 +1,14 @@
+<do-frame leftTitle="省份工业运行态势"  [menubarNoneTwo]=false>
+    <do-container smallTitle="贵州工业增长趋势" [theme]="theme"  dataComing="贵州经信委" [optionType]="option_barLine" [showEcharts]='showEchartsContainer' style="float:left">
+  
+    </do-container>
+    <do-container smallTitle="贵州工业增长情况" [theme]="theme"  dataComing="贵州经信委" [optionType]="option_map" [nameMap]="type" (clicked)="onBmapClick($event)" [showEcharts]='showEchartsContainer' style="margin-left:1vh;float:left">
+
+    </do-container>
+    <do-container smallTitle="贵州工业增长相关指标" [theme]="theme"  dataComing="贵州统计局" [optionType]="option_line" [showEcharts]='showEchartsContainer' [showChangeNorm_type]='showChangeNorm_typeContainer' (btnClicked)="btnGroupClicked($event)" [tabItems]='tabItemsArr' style="margin-top:1vh;float:left">
+
+    </do-container>
+    <do-container smallTitle="贵州行业增长" [theme]="theme"  dataComing="贵州统计局" [optionType]="option_bar" [showEcharts]='showEchartsContainer' style="margin-left:1vh;margin-top:1vh;float:left">
+
+    </do-container>
+</do-frame>

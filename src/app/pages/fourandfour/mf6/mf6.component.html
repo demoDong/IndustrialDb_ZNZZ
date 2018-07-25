@@ -1,0 +1,21 @@
+<do-frame leftTitle="区域监测" [menubarNoneTwo]=false>
+  <do-container style="float:left" smallTitle="广东工业增长趋势" dataComing="广东经信委" [optionType]="trendBar" [theme]="theme"></do-container>
+  <do-container style="margin-left:1vh;float:left" smallTitle="广东区域增长情况" dataComing="广东经信委" [optionType]="trendMap" [theme]="theme"  nameMap="guangdong"></do-container>
+  <do-container style="margin-top:1vh;float:left" smallTitle="广东工业增长相关指标" dataComing="广东经信委" [optionType]="trendLine" [theme]="theme" showChangeNorm_type=true [tabItems]="tabItemsRight" (btnClicked)="btnGroupClicked($event)"></do-container>
+  <do-container style="margin-left:1vh;margin-top:1vh;float:left" smallTitle="广东行业增长红绿灯" class="rightBottom_contain" >
+    <div class="hot-table">
+        <hot-table
+        height="340"
+        width="900"
+        fixedColumnsLeft="1"
+        startRows="15"
+        colWidths="100"
+        hotId="hotInstance"
+        [settings]="settings"
+        [rowHeaders]="false"
+        [colHeaders]="true"
+        [columns]="columns"
+        [data]="table"></hot-table>
+    </div>
+  </do-container>
+</do-frame>

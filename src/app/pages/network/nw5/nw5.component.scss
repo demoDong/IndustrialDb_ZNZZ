@@ -1,0 +1,16 @@
+ .network {
+   /deep/ button.rightBtn {
+     /* display: none; */
+     visibility: hidden;
+   }
+   /deep/ .nw {
+     margin: 0.5vh;
+     float: left;
+   }
+   /deep/ do-echarts {
+     margin-top: 3%;
+   }
+   /deep/ .dataComing {
+     max-width: 30%;
+   }
+ }

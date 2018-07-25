@@ -1,0 +1,24 @@
+<do-frame leftTitle="新一代信息技术（手机）" [menubarNone]=false>
+  <do-container smallTitle="国内手机市场国产化推进情况" dataComing="工信部" [optionType]="leftTop" [theme]="theme"  [showEcharts]="showEcharts" style="float:left">
+  </do-container>
+  <do-container smallTitle="国内手机分省出货量" dataComing="工信部" [theme]="theme" showEcharts="false" [nameMap]="nameMap" 
+    style="margin-left:1vh;float:left">
+    <div class="leftMap">
+        <do-echarts [options]="rightTopMap" [nameMap]="nameMap" [theme]="theme"  style="float:left;height:100%;width:100%"></do-echarts> 
+    </div>
+    <div class="rightPart">
+      <do-echarts [options]="rightTopBar" [theme]="theme"  style="float:left;height:50%;width:100%"></do-echarts> 
+      <do-echarts [options]="rightTopPie" [theme]="theme"  style="float:left;height:50%;width:50%"></do-echarts> 
+      <div class="rightTopText" style="float:left;height:50%;width:50%">
+        <p>广东省手机市场占比</p>
+        <p>2016广东省企业数量</p>
+        <p>302个</p>
+      </div>
+    </div>
+  </do-container>
+  <do-container smallTitle="全球手机市场份额Top10" dataComing="工信部" [theme]="theme" [optionType]="leftBottom" [showEcharts]="showEcharts" style="margin-top:1vh;float:left">
+  </do-container>
+  <do-container smallTitle="手机企业供应链" dataComing="信通院" [showEcharts]="false" style="margin-left:1vh;margin-top:1vh;float:left">
+    <iframe src="assets/vendors/gephi_mobile_new/gephi.html" scrolling="no"></iframe>
+  </do-container>
+</do-frame>

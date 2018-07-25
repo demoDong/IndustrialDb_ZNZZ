@@ -1,0 +1,16 @@
+<do-frame leftTitle="工业企业发展检测"  [menubarNoneTwo]=false>
+  <do-container [optionType]="trendBar"  smallTitle="贵州工业企业增长情况" [showEcharts]="showEcharts" [theme]="theme"  style="float:left"></do-container>
+  <do-container [showEcharts]="showEcharts" style="margin-left:1vh;float:left" [theme]="theme" >
+    <div id="allmap"></div>
+  </do-container>
+  <do-container [optionType]="trendLine" [theme]="theme"  smallTitle="贵州工业企业相关指标" [showEcharts]="showEcharts" (btnClicked)="btnGroupClicked($event)" [tabItems]="tabItemsArr"
+    showChangeNorm_type=true style="margin-top:1vh;float:left"></do-container>
+  <do-container showEcharts="false" [theme]="theme"  smallTitle="贵州工业企业基础信息" style="margin-left:1vh;margin-top:1vh;float:left">
+    <div class="detailedInformation" >
+        <h1 style="text-align: center;padding-top: 1%;margin-left: -40%; color:#72beff;">企业基础信息</h1>
+        <ul class="nglzcl" *ngFor=" let y of productType;" style="margin-left: 14%;">
+          <li style="text-align:left; font-size:16px; color:#72beff">{{y.name}}:{{y.value}}</li>
+        </ul>
+    </div> 
+  </do-container>
+</do-frame>

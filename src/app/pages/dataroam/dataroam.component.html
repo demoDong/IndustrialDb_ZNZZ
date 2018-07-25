@@ -1,0 +1,51 @@
+<do-frame class="dataroam" leftTitle="工业大数据库">
+    <div id="sublibraryCategory">
+        <h3>子库类别</h3>
+        <p-tree [value]="files" class="dataroamPage" selectionMode="single" [(selection)]="selectedFiles" (onNodeSelect)="nodeSelect($event)"></p-tree>
+    </div>
+    <div id="largeCategory">
+        <h3>指标大类</h3>
+        <p-tree [value]="filesTwo" class="dataroamPage" selectionMode="checkbox" [(selection)]="selectedFilesTwo" (onNodeSelect)="nodeSelectTwo($event)"></p-tree>
+    </div>
+    <div class="search">
+        <input type="text" pInputText [(ngModel)]="fuzzyInput" />
+        <button (click)="fuzzyQuery($event)">搜索</button>
+    </div>
+    <div class="content-section implementation">
+        <div class="ui-g">
+            <p-checkbox value="index" label="指标项" [(ngModel)]="checked" binary="true" (onChange)="switchState($event)"></p-checkbox>
+            <div class="ul-g-container">
+                <div class="ui-g-12" *ngFor="let item of checkboxArr">
+                    <p-checkbox value={{item[1]}} label={{item[0]}} [(ngModel)]="selectedCategories" (onChange)="onChangeimplementation($event)"></p-checkbox>
+                </div>
+            </div>
+        </div>
+        <div class="rightPart">
+            <div class="top">
+                <input pInputText [ngClass]="{'hidden': nameCondition}" type="text" placeholder="请输入查询条件" [(ngModel)]="nameInput" />
+                <p-dropdown [ngClass]="{'hidden': timeCondition}" [options]="timeOption" [(ngModel)]="selectedTime" placeholder="请选择时间" optionLabel="name" (onChange)="selectedConditionChange($event)"></p-dropdown>
+                <p-multiSelect [options]="areaOption" [(ngModel)]="selectedArea" defaultLabel="请选择区域" optionLabel="name" (onChange)="selectedConditionChange($event)"></p-multiSelect>
+                <p-multiSelect [options]="industryOption" [(ngModel)]="selectedIndustry" defaultLabel="请选择产业" optionLabel="name" (onChange)="selectedConditionChange($event)"></p-multiSelect>
+                <button (click)="dataQuery($event)">查询</button>
+            </div>
+            <div class="middle">
+                <div class="tableTitle">时间-区域-行业筛选数据结果</div>
+                <p-multiSelect [options]="colOption" [(ngModel)]="selectedCol" optionLabel="name" defaultLabel="请选择对比分析指标" (onChange)="selectedColChange($event)"></p-multiSelect>
+                <hot-table class="hot-table" [height]="hotTableHeight" fixedColumnsLeft="1" startRows="15" colWidths="100" [settings]="settings" [rowHeaders]="false" [colHeaders]="true" [columns]="columns" [data]="table"></hot-table>
+            </div>
+            <div class="bottom">
+                <div class="butList">
+                    <span *ngFor="let item of btnType, let i = index" [ngClass]="{'btnActive': btnActive[i]}" (click)="onBtnActive($event,i)">{{item.name}}</span>
+                </div>
+                <div class="chartTurn">
+                    <do-echarts [options]="optionTurn" [nameMap]="nameMap" [theme]="theme"></do-echarts>
+                </div>
+            </div>
+        </div>
+        <div class="dtsrc">
+            <img *ngFor="let item of dbArr, let i = index" [src]="dbArr[i]"/>
+        </div>
+    </div>
+</do-frame>
+<!-- <div class="bgImg"></div>
+<div class="back" (click)="back()"></div> -->

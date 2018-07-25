@@ -1,0 +1,15 @@
+<do-frame leftTitle="中国制造2025分省市指南" [menubarNoneTwo]=false>
+  <do-container smallTitle="重点领域园区/企业数量" dataComing="工信部" [optionType]="trendLine" [theme]="theme"  [showEcharts]="showEcharts" style="float:left">
+      <img class="imgs" src="assets/images/mf191.jpg" />
+  </do-container>
+  <do-container smallTitle="重点领域园区/企业分布图" dataComing="工信部" [optionType]="growthMap" [theme]="theme" [showEcharts]="showEcharts" [nameMap]="nameMap" 
+   (clicked)="mapClicked($event)" style="margin-left:1vh;float:left">
+   <img class="imgs" src="assets/images/mf192.jpg" />
+  </do-container>
+  <do-container smallTitle="各省发展重点" dataComing="工信部" [theme]="theme" [optionType]="indexLine" [showEcharts]="showEcharts"  (btnClicked)="btnGroupClicked($event)" [tabItems]="tabItems" showChangeNorm_type=true style="margin-top:1vh;float:left">
+      <img class="imgs" src="assets/images/mf193.jpg" />
+  </do-container>
+  <do-container smallTitle="园区/企业详情" dataComing="工信部" [showEcharts]="showEcharts" (btnClicked)="btnGroupClickedRight($event)" [tabItems]="tabItemsRight" showChangeNorm_type=true style="margin-left:1vh;margin-top:1vh;float:left">
+    <img class="imgs" src="assets/images/mf194.jpg" />
+  </do-container>
+</do-frame>

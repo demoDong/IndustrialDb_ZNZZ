@@ -1,0 +1,15 @@
+<do-frame leftTitle="智能制造工程" [menubarNone]=false>
+  <do-container smallTitle="项目投资" dataComing="工信部" [optionType]="trendLine" [theme]="theme" [showEcharts]="showEcharts" style="float:left">
+      <img class="imgs" src="assets/images/mf241.jpg" />
+  </do-container>
+  <do-container smallTitle="项目分布" dataComing="工信部" [optionType]="growthMap" [theme]="theme" [showEcharts]="showEcharts"
+    [nameMap]="nameMap"  style="margin-left:1vh;float:left">
+  </do-container>
+  <do-container smallTitle="项目成效" dataComing="工信部" [theme]="theme" [optionType]="indexLine" [showEcharts]="showEcharts" (btnClicked)="btnGroupClicked($event)"
+    [tabItems]="tabItems" showChangeNorm_type=true style="margin-top:1vh;float:left">
+    <img class="imgs" src="assets/images/mf242.jpg" />
+  </do-container>
+  <do-container smallTitle="项目模式" dataComing="工信部" [theme]="theme" [optionType]="growBarh" [showEcharts]="showEcharts"   style="margin-left:1vh;margin-top:1vh;float:left">
+      <img class="imgs" src="assets/images/mf24.png" />
+  </do-container>
+</do-frame>

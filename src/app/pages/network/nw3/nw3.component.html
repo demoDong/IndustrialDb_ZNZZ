@@ -1,0 +1,10 @@
+<do-frame class="network" leftTitle="数字经济"  menubarNone="true" menubarNoneTwo="true" [menubarNoneNw]="false">
+  <do-network class="nw" [theme]="theme" smallTitle="国际数字经济发展态势" dataComing="信通院" [optionType]="lineLeftDown" showEcharts="true"></do-network>
+  <do-network class="nw" [theme]="theme" smallTitle="我国数字经济发展态势" dataComing="信通院" [optionType]="lineUp"  showEcharts="true"></do-network>
+  <do-network class="nw" smallTitle="各地区数字经济规模" dataComing="信通院"  showEcharts="true" >
+      <do-echarts class="mapL" [options]="mapUp" nameMap="china" [theme]="theme" style="width:50%;float:left"></do-echarts>
+    <!-- <img src="../assets/images/shuzi.png" style="margin-left: 150px; margin-top: 45px;"/> -->
+  </do-network>
+  <do-network class="nw" [theme]="theme" smallTitle="重点行业数字经济规模" dataComing="信通院" [optionType]="lineRightDown" showEcharts="true" (btnClicked)="btnGroupClicked($event)"
+  [tabItems]="tabItems" showChangeNorm_type=true></do-network>
+</do-frame>

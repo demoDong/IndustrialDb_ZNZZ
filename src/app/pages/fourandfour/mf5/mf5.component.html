@@ -1,0 +1,27 @@
+<do-frame leftTitle="新能源汽车" [menubarNoneTwo]=false>
+    <do-container smallTitle="规模增速" style="float:left" dataComing="工信部">
+        <do-echarts [options]="mf5Option1" [theme]="theme" style="width:50%;float:left"></do-echarts>
+        <do-echarts [options]="mf5Option2" [theme]="theme" style="width:50%;float:left"></do-echarts>
+    </do-container>
+    <do-container smallTitle="产业分布" [theme]="theme" style="float:right" showChangeNorm_type=true [tabItems]="tabItemsRight" (btnClicked)="btnGroupRightClicked($event)" class="rightTop">
+        <iframe src="assets/vendors/iframe.html" scrolling="no" *ngIf="inshowIframe"></iframe>
+        <do-echarts [options]="mf5Option3" [theme]="theme" *ngIf="inshowEcharts" [nameMap]="nameMap"></do-echarts>
+        <ul class="buttonList">
+            <li><img src="assets/images/dianchi.png" alt=""></li>
+            <li><img src="assets/images/dianji.png" alt=""></li>
+            <li><img src="assets/images/diankong.png" alt=""></li>
+            <li><img src="assets/images/arrow.png" alt=""></li>
+            <li><img src="assets/images/zhengche.png" alt=""></li>
+        </ul>
+    </do-container>
+    <do-container smallTitle="技术水平" [theme]="theme" showChangeNorm_type=true [tabItems]="tabItemsLeft" style="margin-top:1vh;float:left" dataComing="工信部">
+        <img src="assets/images/mf5_leftBottom.png" alt="" class="imgCharts">
+    </do-container>
+    <do-container smallTitle="市场竞争" style="margin-left:1vh;margin-top:1vh;float:right" class="rightBottom">
+        <do-echarts [options]="mf5Option5" [theme]="theme" style="width:50%;float:left"></do-echarts>
+        <div class="pieBox">
+            <do-echarts [options]="mf5Option6" [theme]="theme" style="height:50%;"></do-echarts>
+            <do-echarts [options]="mf5Option7" [theme]="theme" style="height:50%;"></do-echarts>
+        </div>
+    </do-container>
+</do-frame>

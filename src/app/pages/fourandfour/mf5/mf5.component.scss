@@ -1,0 +1,119 @@
+// .information {
+//     float: left;
+// }
+.mf5Btn1 {
+    height: 13vh;
+    width: 14%;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 11.5%;
+    top: 3vh;
+    outline: none;
+    cursor: pointer;
+}
+
+.mf5Btn2 {
+    height: 13vh;
+    width: 14%;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 11.5%;
+    top: 19.5vh;
+    outline: none;
+    cursor: pointer;
+    outline: none;
+    cursor: pointer;
+}
+
+.mf5Btn3 {
+    height: 13vh;
+    width: 14%;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 36%;
+    top: 10.5vh;
+    outline: none;
+    cursor: pointer;
+}
+
+.mf5Btn4 {
+    height: 13vh;
+    width: 14%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    position: absolute;
+    left: 70%;
+    top: 10vh;
+    outline: none;
+    cursor: pointer;
+}
+
+.rightDown {
+    background: url("../../../../assets/images/mf5-bg.png") center center no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    width: 99%;
+    height: 99%;
+    // position: absolute;
+    // top: 10%;
+    border: none;
+}
+
+.rightBottom,
+.rightTop {
+    /deep/.dataComing {
+        display: none;
+    }
+}
+
+/deep/ button.more.fa.fa-plus {
+    display: none;
+}
+
+/deep/.changeNorm_type {
+    max-width: 80% !important;
+}
+
+.pieBox {
+    width: 50%;
+    float: right;
+    overflow: hidden;
+    height: 100%;
+}
+
+.imgCharts {
+    width: 98%;
+    height: 76%;
+    margin-left: 1%;
+    margin-top: 6%;
+}
+
+.buttonList {
+    list-style: none;
+    margin: 0px;
+    overflow: hidden;
+    position: absolute;
+    width: 110px;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    padding: 15px;
+}
+
+.buttonList li {
+    float: left;
+    height: 18%;
+    margin: 4%;
+}
+
+.buttonList li img {
+    height: 100%;
+    width: 80%;
+}

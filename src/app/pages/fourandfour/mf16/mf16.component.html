@@ -1,0 +1,13 @@
+<do-frame leftTitle="总体检测" [menubarNoneTwo]=false>
+  <do-container smallTitle="工业增长宏观统计" dataComing="统计局" [optionType]="trendLine" [theme]="theme" [showEcharts]="showEcharts"
+    style="float:left">
+  </do-container>
+  <do-container smallTitle="工业大数据辅助决策" dataComing="企业数据" [optionType]="growthMap" [theme]="theme" [showEcharts]="showEcharts"
+    style="margin-left:1vh;float:left">
+  </do-container>
+  <do-container smallTitle="相关统计指标" dataComing="统计局" [theme]="theme" [optionType]="indexLine" [showEcharts]="showEcharts"(btnClicked)="btnGroupClicked($event)" [tabItems]="tabItemsRight" showChangeNorm_type=true
+    style="margin-top:1vh;float:left">
+  </do-container>
+  <do-container smallTitle="量化融合大数据辅助决策" dataComing="一所" [showEcharts]="showEcharts" [optionType]="growBarh" style="margin-left:1vh;margin-top:1vh;float:left">
+  </do-container>
+</do-frame>

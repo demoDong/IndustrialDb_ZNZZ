@@ -1,0 +1,71 @@
+ .network {
+   /deep/ button.rightBtn {
+     /* display: none; */
+     visibility: hidden;
+   }
+   /deep/ .nw {
+     margin: 0.5vh;
+     float: left;
+     .theWord {
+       font-size: 20px;
+       padding-left: 5%;
+       padding-top: 5%;
+       width: 93%;
+     }
+     .theWordHidden {
+       visibility: hidden;
+     }
+     .theWord1 {
+       font-size: 20px;
+       padding-left: 5%;
+       width: 93%;
+       padding-top: 3%;
+     }
+     .theWordHidden1 {
+       visibility: hidden;
+     }
+   }
+   /deep/ .datanone .dataComing {
+     visibility: hidden;
+   }
+   /deep/ .dataComing {
+    max-width: 29%;
+   }
+   .textT {
+     padding-top: 5%;
+     font-size: 16px;
+   }
+   .textT1 {
+     margin-top: -7%;
+     font-size: 16px;
+     margin-left: 63%;
+   }
+   .textHidden {
+     padding-top: 5%;
+     font-size: 16px;
+     visibility: hidden;
+   }
+   .textHidden1 {
+     padding-top: 5%;
+     font-size: 16px;
+     visibility: hidden;
+   }
+   /deep/ .ui-inputtext {
+     background: rgba(0, 0, 0, 0);
+     width: auto;
+     color: white;
+     width: 8%;
+   }
+   .textClass11 {
+     width: 25%;
+   }
+   .textClass21 {
+    margin-left: 15%;
+   }
+   .textClass22 {
+    margin-left: 8%;
+   }
+   .textClass23 {
+    margin-left: 6%;
+   }
+ }

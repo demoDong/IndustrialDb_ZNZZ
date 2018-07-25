@@ -1,0 +1,21 @@
+ .network {
+   /deep/ button.rightBtn {
+     /* display: none; */
+     visibility: hidden;
+   }
+   /deep/ .nw {
+     margin: 0.5vh;
+     float: left;
+     .mapL {
+      position: absolute;
+      margin-left: 25%;
+     }
+   }
+   /deep/ .boxModel[_ngcontent-c6] #myCharts[_ngcontent-c6] {
+     left: 3%;
+     position: absolute;
+     width: 94%;
+     height: 81%;
+     top: 21%;
+   }
+ }

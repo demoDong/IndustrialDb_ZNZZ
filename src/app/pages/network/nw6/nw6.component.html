@@ -1,0 +1,25 @@
+<do-frame class="network" leftTitle="信息服务" menubarNone="true" menubarNoneTwo="true" [menubarNoneNw]="false">
+  <do-network [tabItems]="tabItems" class="nw dataC" [theme]="theme" smallTitle="宽带普及率" dataComing="宽带发展联盟、国家统计局" [optionType]="lineLeftUp"
+    showChangeNorm_type="true" (btnClicked)="btnGroup2Clicked($event)" showChangeNorm_type=true>
+    <p [ngClass]="wordClass">2017年第三季度，我国固定宽带家庭普及率达到72.5%，提前三年完成"十三五"规划中"2020年底达到70%的目标"</p>
+    <p [ngClass]="wordClass1">我国移动宽带用户普及率与35个OECD国家对应相比，可排到第20位，超过法国、德国、加拿大等发达国家。</p>
+  </do-network>
+  <do-network class="nw datanone" [theme]="theme" smallTitle="移动应用" dataComing="信通院" nameMap="china" [optionType]="lineRightUp"
+    (btnClicked)="btnGroup1Clicked($event)" [tabItems]="tabItems1" showChangeNorm_type=true>
+    <div [ngClass]="textClass">
+      <label class="textClass21" for="float-input">苹果</label>
+      <input type="text" readonly="readonly" pInputText [(ngModel)]="text" />万
+      <label class="textClass22" for="float-input">谷歌</label>
+      <input type="text" readonly="readonly" pInputText [(ngModel)]="text1" />万
+      <label class="textClass23" for="float-input">我国第三方应用生态</label>
+      <input type="text" readonly="readonly" pInputText [(ngModel)]="text2" />万
+    </div>
+    <div [ngClass]="textClass1">
+      <label for="float-input">累计开发者人数</label>
+      <input type="text" readonly="readonly" class="textClass11" pInputText [(ngModel)]="text3" />
+    </div>
+  </do-network>
+  <do-network class="nw" [theme]="theme" smallTitle="资费水平" dataComing="信通院" [optionType]="lineLeftDown" showChangeNorm_type="true"></do-network>
+  <do-network class="nw " [theme]="theme" smallTitle="移动互联网流量" [optionType]="lineRightDown" showChangeNorm_type="true" dataComing="工信部">
+  </do-network>
+</do-frame>

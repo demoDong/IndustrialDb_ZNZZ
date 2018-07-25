@@ -1,0 +1,150 @@
+<do-frame class="bigdatabase" leftTitle="智能制造产业数据库">
+  <div class="ui-g">
+    <div class="ui-g-2 ui-g-nopad,thefirstDiv">
+      <div class="ui-g-12 childLibrary,thefirstDiv1">
+        <p-panel header="子库类别" class="thefirstDiv2">
+          <p-tree class="treeFirst" [style]="{'height':'20vh','width':'100%','border': 'none !important'}" [value]="files" selectionMode="single"
+            [(selection)]="selectedFiles" (onNodeSelect)="nodeSelect($event)"></p-tree>
+        </p-panel>
+      </div>
+      <div class="ui-g-12">
+        <p-panel header="指标大类" class="thesecondDiv">
+          <!-- <p-tree [style]="{'height':'43vh','width':'100%'}" [value]="filesTwo" selectionMode="checkbox" [(selection)]="selectedFilesTwo"
+            (onNodeSelect)="nodeSelectTwo($event)" (onNodeUnselect)="nodeSelectTwo($event)"></p-tree> -->
+          <p-tree [value]="treeFiles" [style]="{'height':'43vh','width':'100%'}" selectionMode="single" (onNodeSelect)="nodeSelectTwo($event)"></p-tree>
+        </p-panel>
+      </div>
+    </div>
+    <div class="ui-g-2 ui-g-nopad">
+      <div class="ui-g-12">
+        <div class="ui-inputgroup">
+          <input class="ui-g-8 inputDiv" type="text" pInputText placeholder="指标模糊查询" [(ngModel)]="fuzzyInput">
+          <button class="ui-g-4" style="padding:0;" pButton type="button" (click)="fuzzyQuery($event)" label="搜索"></button>
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <p-panel [style]="{'height':'70vh'}" class="thethirdDiv">
+          <p-header>
+            <p-checkbox value="index" label="指标项" [(ngModel)]="checked" binary="true" (onChange)="switchState($event)"></p-checkbox>
+          </p-header>
+          <div class="ui-g-12 ui-g-nopad" style="height: 67vh;overflow: auto; background: rgba(12, 36, 120, 0.5) !important;">
+            <p-checkbox class="ui-g-12" *ngFor="let item of checkboxArr" value={{item[1]}} label={{item[0]}} [(ngModel)]="selectedCategories"
+              (onChange)="onChangeimplementation($event)"></p-checkbox>
+          </div>
+        </p-panel>
+      </div>
+    </div>
+    <div [ngClass]="{'ui-g-5 ui-g-nopad table-5': classa,'ui-g-8 ui-g-nopad table-5': !classa}">
+      <div class="ui-g-12">
+        <p-panel header="" class="thefourDiv">
+          <div class="ui-g">
+            <div class="ui-g-3">
+              <input pInputText style="width:8em" [ngClass]="{'hidden': nameCondition}" type="text" placeholder="请输入查询条件" [(ngModel)]="nameInput"
+              />
+              <p-dropdown [style]="{'width':'8em'}" [ngClass]="{'hidden': timeCondition}" [options]="timeOption" [(ngModel)]="selectedTime"
+                placeholder="请选择时间" optionLabel="name"></p-dropdown>
+            </div>
+            <div class="ui-g-3">
+              <p-multiSelect [style]="{'width':'8em'}" [options]="areaOption" [(ngModel)]="selectedArea" defaultLabel="请选择区域" optionLabel="name"
+                selectedItemsLabel="已选择 {0} 项"></p-multiSelect>
+            </div>
+            <div class="ui-g-3">
+              <p-multiSelect [style]="{'width':'8em'}" [options]="industryOption" [(ngModel)]="selectedIndustry" defaultLabel="请选择产业" optionLabel="name"
+                selectedItemsLabel="已选择 {0} 项"></p-multiSelect>
+            </div>
+            <div class="ui-g-3">
+              <button pButton style="width:8em;height:2.6rem;" type="button" (click)="dataQuery($event)" label="查询"></button>
+            </div>
+          </div>
+        </p-panel>
+      </div>
+      <div class="ui-g-12">
+        <p-tabView class="tableDiv4">
+          <p-tabPanel header="查询结果" class="tableDiv">
+            <p-dataTable class="tableDiv3" scrollable="true" scrollHeight="100%" scrollWidth="tableWidth" columnResizeMode="expand" [value]="pgTableData"
+              [(selection)]="selectedData" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)">
+              <!-- <p-dataTable class="tableDiv3" scrollable="auto" scrollWidth="100%" [style]="{'max-height':'10vh','max-width':'80vw'}" columnResizeMode="expand" [value]="pgTableData" [(selection)]="selectedData" (onRowSelect)="onRowSelect($event)"
+              (onRowUnselect)="onRowUnselect($event)" (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)"> -->
+              <p-header>
+                <div style="text-align:left">
+                  <p-multiSelect [options]="pgColsOption" [(ngModel)]="pgCols" (onChange)="selectedColsChange($event)" selectedItemsLabel="已选择 {0} 项"
+                    defaultLabel="请选择查看项"></p-multiSelect>
+                    <div class="inputClass">
+                      <p-multiSelect [options]="pgColsOption1" [(ngModel)]="pgCols1" (onChange)="selectedColsChange1($event)" selectedItemsLabel="已选择 {0} 项"
+                    defaultLabel="请选择承担单位"></p-multiSelect>
+                    <p-multiSelect [options]="pgColsOption2" [(ngModel)]="pgCols2" (onChange)="selectedColsChange2($event)" selectedItemsLabel="已选择 {0} 项"
+                    defaultLabel="请选择项目名称"></p-multiSelect>
+                    </div>
+                    <div style="position: absolute;right: 5%;top: 21%;">
+                      <button pButton style="width:8em;height:2.6rem;" type="button" (click)="exportExcel($event)" label="导出"></button>
+                    </div>
+                </div>
+              </p-header>
+              <p-column [style]="{'width':'3.8rem'}" selectionMode="multiple"></p-column>
+              <p-column [style]="{'width':'14rem'}" *ngFor="let col of pgCols" [field]="col.field" [header]="col.header"></p-column>
+            </p-dataTable>
+          </p-tabPanel>
+          <p-tabPanel header="图表分析" class="chartDiv">
+            <p-panel [style]="{'height':'51vh'}">
+              <p-header>
+                <div class="ui-g-12 butList">
+                  <span *ngFor="let item of btnType, let i = index" [ngClass]="{'btnActive': btnActive[i]}" (click)="onBtnActive($event,i)">{{item.name}}</span>
+                </div>
+              </p-header>
+              <div class="ui-g-12 chartTurn">
+                <do-echarts [options]="optionTurn" [nameMap]="nameMap" [theme]="theme"></do-echarts>
+              </div>
+            </p-panel>
+          </p-tabPanel>
+        </p-tabView>
+        <button class="fa" [ngClass]="{'classButton fa-angle-double-left':!classa,'classButton1 fa-angle-double-right':classa}" (click)="According($event)"></button>
+      </div>
+    </div>
+    <div class="img-6" [ngClass]="{'ui-g-3':classa,'ui-g-0':!classa}">
+      <p-panel header="" [style]="{'height':'75vh'}" class="picuterDiv">
+        <div class="ui-g-12 dtsrc">
+          <div class="ui-g-10" style="height:55vh; margin-left:-1vw;">
+            <div class="ul-g-12 imgDiv" style="height:28vh">
+              <img class="imageClass" [src]="dbArr[6]" />
+            </div>
+            <div class="ul-g-12" style="height:20vh">
+              <img class="imgClass1" [src]="dbArr[7]" />
+            </div>
+            <div class="ul-g-12 imgDiv1" style="height:25vh">
+              <img class="imgClass4" [src]="dbArr[10]" />
+            </div>
+          </div>
+          <div class="ui-g-2" style="height:55vh;margin-left: -4vw;">
+            <div class="ul-g-12" style="height:25vh">
+              <img class="imgClass2" [src]="dbArr[8]" />
+            </div>
+            <div class="ul-g-12" style="height:20vh">
+              <img class="imgClass3" [src]="dbArr[9]" />
+            </div>
+          </div>
+          <div class="ui-g-12 lastDiv" style="margin-left: -5vw !important; width:122%;margin-top: 3vh;">
+            <div class="ui-g-1"></div>
+            <div class="ui-g-2">
+              <img [src]="dbArr[0]" class="img0" />
+            </div>
+            <div class="ui-g-2">
+              <img [src]="dbArr[1]" class="img1" />
+            </div>
+            <div class="ui-g-2">
+              <img [src]="dbArr[2]" class="img2" />
+            </div>
+            <div class="ui-g-2">
+              <img [src]="dbArr[3]" class="img3" />
+            </div>
+            <div class="ui-g-2">
+              <img [src]="dbArr[4]" class="img4" />
+            </div>
+            <!-- <img class="ui-g-2" style="margin: 0em .5em;" [src]="dbArr[2]"/> -->
+            <div class="ui-g-1"></div>
+            <div class="divClass">税务总局、科技部、质检总局、环保部等XX部委数据正在持续接入中···</div>
+          </div>
+        </div>
+      </p-panel>
+    </div>
+  </div>
+</do-frame>

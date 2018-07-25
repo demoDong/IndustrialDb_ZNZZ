@@ -1,0 +1,231 @@
+ .network {
+   /deep/ button.rightBtn {
+     /* display: none; */
+     visibility: hidden;
+   }
+   /deep/ .nw {
+     margin: 0.5vh;
+     float: left;
+     .dataComing {
+       max-width: 40%;
+     }
+     .theWord {
+       font-size: 20px;
+       padding-left: 5%;
+       padding-top: 5%;
+       width: 93%;
+     }
+     .theWordHidden {
+       visibility: hidden;
+     }
+     .theWord1 {
+       font-size: 20px;
+       padding-left: 5%;
+       margin-top: 4.5%;
+       width: 93%;
+     }
+     .theWordHidden1 {
+       visibility: hidden;
+     }
+   }
+   /deep/ .datanone .dataComing {
+     visibility: hidden;
+   }
+   .netCountry {
+     background: url('../../../../assets/images/greatPowerIndex.png') center center no-repeat;
+     background-size: 90% auto;
+   }
+   do-echarts {
+     display: block;
+     width: 100%;
+     height: 100%;
+     /deep/ .echart {
+       height: 100%;
+       width: 100%;
+     }
+   }
+ }
+
+ .rightDown {
+   float: left;
+ }
+
+ .coverRange {
+   float: left;
+   width: 22%;
+   margin-left: 4%;
+   padding-top: 6%;
+   margin-right: 0%;
+ }
+
+ .coverRange h4,
+ .secSituation>h4 {
+   color: #72beff;
+   font-size: 2.2rem;
+   margin-top: -6%;
+ }
+
+ .coverRange span {
+   font-size: 2.0rem;
+ }
+
+ .coverRange span:nth-child(4),
+ .coverRange span:nth-child(8),
+ .coverRange span:nth-child(12),
+ .coverRange span:nth-child(16),
+ .coverRange span:nth-child(20) {
+   background: url('../../../../assets/images/daohangR.png') 0 0 no-repeat;
+   background-size: 100% 100%;
+   padding: 2% 12%;
+ }
+
+ .coverRange span:nth-child(6),
+ .coverRange span:nth-child(10),
+ .coverRange span:nth-child(14),
+ .coverRange span:nth-child(18) {
+   margin-top: 4%;
+   display: inline-block;
+ }
+
+ .secSituation {
+   float: left;
+   padding-top: 6%;
+   margin-left: 7%;
+ }
+
+ .netSecurity {
+   font-size: 2.0rem;
+ }
+
+ .security {
+   font-size: 2.0rem;
+ }
+
+ .industrySec {
+   font-size: 2.0rem;
+ }
+
+ .netStrongCountry {
+   width: 11%;
+   height: 10%; // border: 1px solid #fff;
+   border: none;
+   background: transparent;
+   margin-top: 15%;
+ }
+
+ .NetworkFacilities {
+   margin-left: 2%;
+ }
+
+ .techIndustry {
+   margin-left: 0.6%;
+ }
+
+ .networkSecurity {
+   margin-left: 1%;
+ }
+
+ .informationService {
+   margin-left: 13%;
+ }
+
+ .digitalEconomy {
+   margin-left: 0.5%;
+ }
+
+ .netCountry {
+   /deep/ #myCharts {
+     display: none;
+     /deep/do-echarts {
+       display: none;
+       /deep/ .echarts {
+         display: none;
+         width: 0%;
+         height: 0%;
+       }
+     }
+   }
+ }
+
+ .roteValue p {
+   height: 10%;
+   padding-top: 5%;
+   font-size: 1.6rem;
+ }
+
+ .contentHidden {
+   display: none !important;
+ }
+
+ .roteMap {
+   width: 50%;
+   height: 83%;
+ }
+
+ .roteMap,
+ .rotePassage {
+   float: left;
+   width: 50%;
+   height: 83%;
+ }
+
+ .spanOne {
+   margin-left: 36%;
+   font-size: 1.6rem;
+ }
+
+ .spanTwo {
+   margin-left: 12%;
+   font-size: 1.6rem;
+ }
+
+ .ul1,
+ .ul2 {
+   display: inline-block;
+ }
+
+ .ul1 {
+   width: 28%;
+   margin-left: 18%;
+   padding-left: 15%;
+ }
+
+ .ul1 li {
+   list-style: none;
+   margin-left: 27.5%;
+   font-size: 1.6rem;
+ }
+
+ .ul2 li {
+   list-style: none;
+   font-size: 1.6rem;
+ }
+
+ .historyChange {
+   width: 100%;
+   height: 100%;
+ }
+
+ .historyChange p {
+   width: 100%;
+   height: 10%;
+   font-size: 1.6rem;
+ }
+
+ .historyChange do-echarts {
+   width: 100%;
+   height: 75%;
+ }
+
+ .provinceNum {
+   background-color: #1A4DAC;
+   display: inline-block;
+   width: 10%;
+   padding: 1% 9% 1% 3%;
+   border: 1px solid #77BEF9;
+   font-size: 1.6rem;
+ }
+
+ .contentHidden {
+   display: none !important;
+ }

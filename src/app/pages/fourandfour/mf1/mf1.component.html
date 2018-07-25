@@ -1,0 +1,13 @@
+<do-frame leftTitle="总体监测" [menubarNoneTwo]=false>
+  <do-container smallTitle="全国工业增长趋势" dataComing="统计局" [optionType]="trendLine" [theme]="theme"  [showEcharts]="showEcharts" style="float:left">
+  </do-container>
+  <do-container smallTitle="全国各区域工业增长情况" dataComing="统计局、工信部" [optionType]="growthMap" [theme]="theme" [showEcharts]="showEcharts" [nameMap]="nameMap" 
+   (clicked)="mapClicked($event)" style="margin-left:1vh;float:left">
+  </do-container>
+  <do-container smallTitle="全国工业增长相关指标" dataComing="统计局" [theme]="theme" [optionType]="indexLine" [showEcharts]="showEcharts"  (btnClicked)="btnGroupClicked($event)" [tabItems]="tabItems" showChangeNorm_type=true style="margin-top:1vh;float:left">
+  </do-container>
+  <do-container smallTitle="全国行业增长情况" dataComing="统计局" [showEcharts]="showEcharts" style="margin-left:1vh;margin-top:1vh;float:left">
+    <do-echarts [options]="growBarh" [theme]="theme" style="width:50%;float:left"></do-echarts>
+    <do-echarts [options]="growBarl" [theme]="theme" style="width:50%;float:left"></do-echarts>
+  </do-container>
+</do-frame>

@@ -1,0 +1,16 @@
+<do-frame leftTitle="国家新型工业化产业示范基地">
+        <do-container smallTitle="总体发展情况" dataComing="工信部" [optionType]="trendLine" [theme]="theme"  [showEcharts]="showEcharts" style="float:left">
+            <img class="imgs" src="assets/images/mf231.jpg" />
+        </do-container>
+        <do-container smallTitle="示范基地分布" dataComing="工信部" [optionType]="growthMap" [theme]="theme" [showEcharts]="showEcharts" [nameMap]="nameMap" 
+         (clicked)="mapClicked($event)" style="margin-left:1vh;float:left">
+         <img class="imgs" src="assets/images/mf232.jpg" />
+        </do-container>
+        <do-container smallTitle="示范基地TOP10" dataComing="工信部" [theme]="theme" [optionType]="indexLine" [showEcharts]="showEcharts"  (btnClicked)="btnGroupClicked($event)" [tabItems]="tabItems" showChangeNorm_type=true style="margin-top:1vh;float:left">
+            <img class="imgs" src="assets/images/mf233.jpg" />
+        </do-container>
+        <do-container smallTitle="示范基地排行占比" dataComing="工信部" [showEcharts]="showEcharts" (btnClicked)="btnGroupClickedRight($event)" [tabItems]="tabItemsRight" showChangeNorm_type=true style="margin-left:1vh;margin-top:1vh;float:left">
+          <img class="imgs" src="assets/images/mf234.jpg" />
+        </do-container>
+      </do-frame>
+      

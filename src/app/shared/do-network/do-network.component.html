@@ -1,0 +1,13 @@
+<div class="boxModel">
+  <button type="text" (click)="showLargeModal()" class="btn OnJump" *ngIf="OnJump"></button>
+  <button (click)="anotherClicked()" *ngIf="shut" class="OnJump"> </button>
+  <h3 *ngIf="showTitle" class="titleStyle">{{smallTitle}}</h3>
+  <div id="myCharts" *ngIf="showEcharts">
+    <do-echarts [options]="optionType" [theme]="theme" [nameMap]="nameMap" (chartClick)="onClicked($event)"></do-echarts>
+  </div>
+  <ng-content></ng-content>
+  <div class="dataComing">数据来源：{{dataComing}}</div>
+  <div class="changeNorm_type" *ngIf="showChangeNorm_type">
+    <button *ngFor="let item of tabItems; let i = index" [ngClass]="{true:'buttonClick'}[isClick[i]]" (click)="onBtnClick(i)">{{item}}</button>
+  </div>
+</div>

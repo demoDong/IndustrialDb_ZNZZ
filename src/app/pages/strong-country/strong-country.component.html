@@ -1,0 +1,22 @@
+<do-frame leftTitle="战略推进" [menubarNone]=false>
+    <div class="left"></div>
+    <div class="right">
+        <div class="rightMap">
+            <do-echarts [options]="mapOption" [theme]="theme" [nameMap]="nameMap"></do-echarts>
+        </div>
+        <div class="rightMenu">
+            <div>
+                <h3>五大工程</h3>
+                <span *ngFor="let item of fiveMajorAreas">{{item}}</span>
+            </div>
+            <div>
+                <h3>十大领域</h3>
+                <span *ngFor="let item of tenMajorAreas;let i = index;" (click)="mapTurn1(i)">{{item}}</span>
+            </div>
+            <div>
+                <h3>示范区</h3>
+                <span *ngFor="let item of demonstrationArea;let i = index;" (click)="mapTurn2(i)">{{item}}</span>
+            </div>
+        </div>
+    </div>
+</do-frame>

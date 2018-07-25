@@ -1,0 +1,43 @@
+<do-frame class="network" leftTitle="网络设施"  menubarNone="true" menubarNoneTwo="true" [menubarNoneNw]="false">
+  <do-network class="nw Networking" smallTitle="网络建设" dataComing="工信部、信通院" showEcharts="false" showChangeNorm_type=true >
+    <p [ngClass]="wordClass" style="font-size: 1.6rem;">&#x3000;&#x3000;{{leftPassage}}</p>
+    <div class="leftEcharts">
+      <do-echarts [options]="ftthline" [theme]="theme" style="width:100%; margin-left:6%; margin-top:3%;"></do-echarts> 
+    </div>
+    <div class="rightEcharts">
+      <do-echarts [options]="basebar" [theme]="theme" style="width:100%; margin-left:6%; margin-top:3%;"></do-echarts> 
+    </div>
+  </do-network>
+  <do-network class="nw roteValue" (btnClicked)="btnNetClicked($event)" [theme]="theme" smallTitle="下载速率" dataComing="宽带发展联盟" nameMap="china" showEcharts="false" [tabItems]="tabItems" showChangeNorm_type=true>
+    <p [ngClass]="{'contentHidden': mapHidden}" style="margin-left:10%; font-size: 1.6rem;">2017年第三季度全国固定宽带可用下载速率达到&#x3000;<span class="provinceNum">{{provinceRate}}</span>&#x3000;Mbps</p>
+    <div [ngClass]="{'contentHidden': mapHidden}" class="roteMap">
+      <do-echarts [options]="speedMap" [nameMap]="nameMap" [theme]="theme" style="width:100%; margin-left:6%; margin-top:3%;"></do-echarts> 
+    </div>
+    <div [ngClass]="{'contentHidden': mapHidden}" class="rotePassage">
+      <h3 style="margin-top: 13%; margin-left: 37%; font-size: 1.6rem;">{{rateTitle}}</h3>
+      <span class="spanOne">{{provinceName}}</span><span class="spanTwo">{{rateSpeed}}</span><br>
+      <ul class="ul1">
+        <li *ngFor="let item of nameFor">{{item}}</li>
+      </ul>
+      <ul class="ul2">
+        <li *ngFor="let speed of rateFor">{{speed}}</li>
+      </ul>
+    </div>
+    <div [ngClass]="{'contentHidden': historyChangeHidden}" class="historyChange">
+      <p>&#x3000;&#x3000;{{historyDis}}</p>
+      <do-echarts [options]="historyBar" [theme]="theme" style="width:100%; margin-left:6%; margin-top:3%;"></do-echarts> 
+    </div>
+  </do-network>
+  <do-network class="nw" [theme]="theme" showEcharts="false" showChangeNorm_type=true smallTitle="网间互联" dataComing="工信部、信通院" shut=true>
+    <div class="netInterleft">
+      <do-echarts [options]="interMap" [theme]="theme" [nameMap]="nameMap" style="width:100%; margin-left:6%; margin-top:3%;"></do-echarts> 
+    </div>
+    <div class="netInteright">
+      <do-echarts [options]="interBar" [theme]="theme" style="width:100%; margin-left:6%; margin-top:3%; height:50%;"></do-echarts> 
+      <do-echarts [options]="downBar" [theme]="theme" style="width:100%; margin-left:6%; margin-top:0%; height:50%;"></do-echarts> 
+    </div>
+  </do-network>
+  <do-network class="nw" smallTitle="国际海缆" dataComing="信通院" (jumpClicked)="myClicked()" shut=true>
+    <img class="imgs" src="assets/images/nw2.png"/>
+  </do-network>
+</do-frame>

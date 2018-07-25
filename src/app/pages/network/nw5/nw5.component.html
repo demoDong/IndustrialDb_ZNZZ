@@ -1,0 +1,10 @@
+<do-frame class="network" leftTitle="技术产业"  menubarNone="true" menubarNoneTwo="true" [menubarNoneNw]="false">
+  <do-network class="nw"  smallTitle="我国高科技产品出口金额占全球比例" [theme]="theme" dataComing="联合国Comtrade数据库" [optionType]="lineLeftUp" showEcharts="true" (btnClicked)="btnGroup3Clicked($event)"
+  [tabItems]="tabItems" showChangeNorm_type=true></do-network>
+  <do-network class="nw" smallTitle="我国计算机、通信和其他电子设备制造业研发投入强度(%)" [theme]="theme" dataComing="统计局" [optionType]="lineRightUp" showEcharts="true" (btnClicked)="btnGroupClicked($event)"
+    [tabItems]="tab3Items" showChangeNorm_type=true></do-network>
+  <do-network class="nw" smallTitle="集成电路产业链各环节营收" [theme]="theme" dataComing="半导体协会" [optionType]="barDown" showEcharts="true" (btnClicked)="btnGroup1Clicked($event)"
+    [tabItems]="tab1Items" showChangeNorm_type=true shut=true></do-network>
+  <do-network class="nw" smallTitle="国内手机市场国产手机出货量占比" [theme]="theme" dataComing="信通院" [optionType]="lineRightDown" showEcharts="true" (btnClicked)="btnGroup2Clicked($event)"
+    [tabItems]="tab2Items" showChangeNorm_type=true></do-network>
+</do-frame>

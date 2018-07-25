@@ -1,0 +1,18 @@
+<div class="bg">
+  <div class="loginTitle"></div>
+  <div id="userNameDiv">账号 ：
+    <input id="userName" type="text" [(ngModel)]="user.type.name" placeholder="请输入账号">
+  </div>
+  <div id="passWordDiv">密码 ：
+    <input id="passWord" type="password" [(ngModel)]="user.type.passWord" placeholder="请输入密码">
+  </div>
+  <div id="submitBtnDiv">
+    <button id="submitBtn" type="btn" (click)="submitThis()">登 录</button>
+  </div>
+  <p-dialog header="提示" [(visible)]="display">
+    <span>用户名或密码错误！请检查后重试。</span>
+    <p-footer>
+      <button type="button" pButton icon="fa-close" (click)="display=false" label="关闭"></button>
+    </p-footer>
+  </p-dialog>
+</div>

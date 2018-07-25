@@ -1,0 +1,29 @@
+.modal-header {
+  background: #000;
+  border: none;
+  button.close {
+    color: #fff;
+  }
+}
+.modal-body {
+  background: #000;
+  do-echarts {
+    display: block;
+    width: 100%;
+    height: 80%;
+  }
+}
+/deep/.modal-content {
+  background: #000;
+}
+.special{
+  height: 100%;
+  width: 100%;
+  p{
+    color: #fff;
+    font-size: 2.0rem;
+  }
+}
+
+
+

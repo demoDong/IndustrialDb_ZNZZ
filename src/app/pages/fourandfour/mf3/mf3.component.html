@@ -1,0 +1,10 @@
+<do-frame leftTitle="工业园区发展趋势"  [menubarNoneTwo]=false>
+  <do-container smallTitle="贵州工业园区增长趋势"  [theme]="theme"  [optionType]="mf3Option1" style="float:left"></do-container>
+  <do-container [showTitle]="showContainerTitle" [theme]="theme"   class="mf3container2"  [nameMap]="map" 
+  style="margin-left:1vh;float:left" >
+  <div id="allmap"></div>
+</do-container>
+  <do-container smallTitle="贵州工业园区相关指标" [optionType]="mf3Option3" [theme]="theme"  (btnClicked)="btnGroupClicked($event)" [tabItems]="tabItemsArr" showChangeNorm_type=true 
+  style="margin-top:1vh;float:left"></do-container>
+  <do-container smallTitle="贵州工业园区企业排行" [optionType]="mf3Option4" [theme]="theme"  style="margin-left:1vh;margin-top:1vh;float:left"></do-container>
+</do-frame>

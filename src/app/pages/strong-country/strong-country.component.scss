@@ -1,0 +1,49 @@
+.left {
+    width: 28%;
+    height:80vh;
+    float: left;
+    background: url('../../../assets/images/leftqt.png') 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.right {
+    width: 71%;
+    height:80vh;
+    float: left;
+    margin-left: 1%;
+    background: url('../../../assets/images/rightqt.png') 0 0 no-repeat;
+    background-size: 100% 100%;
+    .rightMap {
+        width: 72%;
+        height:54vh;
+        float: left;
+        margin-top: 26vh;
+    }
+    .rightMenu {
+        width: 28%;
+        height:80vh;
+        float: left;
+        padding-top: 7vh;
+        div {
+            width:100%;
+            float: left;
+            h3 {
+                width:100%;
+                background: #16398B;
+                color:#fff;
+                font-size: 2.4rem;
+                padding: 5px;
+                padding-left: 5%;
+                margin-bottom: 0px;
+            }
+            span {
+                display: inline-block;
+                width:100%;
+                padding: 5px;
+                padding-left: 5%;
+                background: #0B1F64;
+                color:#9AB8EE;
+                font-size: 2rem;
+            }
+        }
+    }
+}

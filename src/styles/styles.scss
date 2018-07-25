@@ -1,0 +1,456 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+
+
+/* This file is for setting global styles  */
+
+$border: 2px #0091fc solid;
+@import 'variables';
+@import url('../../node_modules/font-awesome/css/font-awesome.min.css');
+@import url('../../node_modules/primeng/resources/themes/omega/theme.css');
+@import url('../../node_modules/primeng/resources/primeng.min.css');
+@import url('../../node_modules/bootstrap/dist/css/bootstrap.css');
+@import url('../../node_modules/handsontable/dist/handsontable.full.css');
+
+button {
+    outline: none !important;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: 'ZaoZi';
+    src: url('../assets/fonts/zaozi.otf');
+}
+
+body {
+    background: url('../assets/images/dataroam.png') no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Microsoft YaHei';
+    height: 100%;
+    width: 100%;
+}
+
+do-echarts {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /deep/ .echart {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.title {
+    position: relative;
+    font-family: 'ZaoZi';
+    width: 100%;
+    float: left;
+    margin-top: 0%;
+    p-menubar {
+        float: left;
+        .ui-menubar {
+            background: transparent;
+            border-color: transparent;
+            p-menubarsub {
+                .ui-menuitem-link {
+                    color:#fff;
+                    font-size: 2rem;
+                }
+                .ui-menuitem-active > .ui-menuitem-link {
+                    background: transparent;
+                    .ui-submenu-icon {
+                        color: #FB2D0B;
+                    }
+                }
+                p-menubarsub {
+                    .ui-menu-list {
+                        background: rgba(22,58,141,0.6);
+                        border-color: transparent;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dashboard {
+    float: left;
+    height: 80vh;
+    width: 98%;
+    margin-top: 1vh;
+    margin-left: 1%;
+    overflow: hidden;
+}
+
+.title p {
+    font-size: 4rem;
+}
+.title>button {
+    font-size: 2.4rem;
+}
+.title>.sumtitle {
+    font-size: 2.8rem;
+}
+
+.title p {
+    width: 29.5%;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    float: left; // background: url('../assets/images/logo.png') 0 center no-repeat;
+    background-size: auto 75%;
+    letter-spacing: 0.3vh;
+}
+
+.title>button {
+    background: url('../assets/images/daohangR.png') no-repeat;
+    background-size: 100% 100%;
+    width: 11.3%;
+    border: none;
+    font-family: 'Microsoft YaHei';
+    float: left;
+    color: #72beff;
+    margin-top: 1.8%;
+}
+
+.btnDisplay {
+    background: url('../assets/images/topSelect.png') no-repeat !important;
+    background-size: 100% 100% !important;
+    color: #fff !important;
+    outline: none !important;
+}
+
+// .title > button:hover,
+// .title > button:active {
+//   background: url('../assets/images/topSelect.png') no-repeat;
+//   background-size: 100% 100%;
+//   color: #fff;
+//   outline: none;
+// }
+.title>.exit:hover,
+.title>.exit:active {
+    background: url('../assets/images/fanhui.png') no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    outline: none;
+}
+
+.title>.sumtitle {
+    background: url('../assets/images/blockTitle.png') no-repeat;
+    background-size: auto 100%;
+    font-family: 'Microsoft YaHei';
+    color: #fff;
+    letter-spacing: 0.7vh;
+    font-weight: bold;
+    width: 70%;
+    height: 6vh;
+    margin-top: 0%;
+    margin-left: 1.5%;
+    padding-left: 4%;
+    padding-top: 0.8%;
+    text-align: left;
+}
+
+.title>.exit {
+    background: url('../assets/images/fanhui.png') no-repeat;
+    background-size: 100% 100%;
+    width: 3.6%;
+    position: absolute;
+    right: 1%;
+    color: #fff;
+    outline: none;
+    font-size: 2.0rem;
+}
+
+.footer {
+    width: 100%;
+    margin-top: 0.5vh;
+    float: left;
+    background: url('../assets/images/bottomBg.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer>button {
+    float: left;
+    background: url('../assets/images/footerBg.png') no-repeat;
+    background-size: 100% 100%;
+    color: #72beff;
+    border: none;
+    font-size: 2.4rem;
+}
+
+.footerClass {
+    background: url('../assets/images/selectFooter.png') no-repeat !important;
+    background-size: 100% 100% !important;
+    color: #fff !important;
+    border: none !important;
+    outline: none !important;
+}
+
+// tree插件样式修改(dataroam页)
+// @media screen and (min-width: 1366px) {
+//     .dataroamPage .ui-widget {
+//         font-size: 1.5em;
+//     }
+// }
+
+// @media screen and (min-width: 1920px) {
+//     .dataroamPage .ui-widget {
+//         font-size: 2em;
+//     }
+// }
+.dataroamPage .ui-widget {
+    font-size: 2em;
+}
+
+.dataroamPage .ui-tree {
+    width: 100%;
+}
+
+.dataroamPage .ui-widget-content {
+    border: 0;
+    background: transparent;
+    color: #fff;
+}
+
+.dataroamPage .ui-tree .ui-tree-container {
+    height: 68vh;
+}
+
+.dataroamPage .ui-tree-container::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+    background: transparent;
+    border: 0;
+}
+
+.dataroamPage .ui-tree-container::-webkit-scrollbar-thumb {
+    width: 0.5em;
+    height: 0.5em;
+    background: #174088;
+    border: 0;
+    border-radius: 5px;
+}
+.dataroamPage .ui-tree-container::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+// 多选框样式
+.implementation .ui-g {
+    width: 14%;
+    max-height: 70vh;
+    margin-top: 3vh;
+    margin-left: 1%;
+    margin-bottom: 0px;
+    overflow: auto;
+    float: left;
+}
+.implementation .ui-g::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+    background: transparent;
+    border: 0;
+}
+
+.implementation .ui-g::-webkit-scrollbar-thumb {
+    width: 0.5em;
+    height: 0.5em;
+    background: #174088;
+    border: 0;
+    border-radius: 5px;
+}
+.implementation .ui-g::-webkit-scrollbar-corner {
+    background: transparent;
+}
+// .ui-g {
+//     .ui-g-12 {
+//         min-width: max-content;
+//     }
+//     p-checkbox {
+//         color: #fff !important;
+//         .ui-chkbox-label {
+//             white-space: nowrap;
+//             margin-bottom: 0px;
+//         }
+//     }
+// }
+// 下拉框组件样式
+.implementation .rightPart {
+    .top {
+        .ui-multiselect .ui-multiselect-label {
+            margin-bottom: 0px;
+        }
+        p-dropdown {
+            .ui-dropdown {
+                width: 11vw !important;
+                border-color: #296FDE;
+                .ui-dropdown-label{
+                    background: #184088;
+                    border: 1px solid #296FDE;
+                    color: #fff;
+                }
+                .ui-dropdown-trigger{
+                    background: transparent;
+                    color: #fff;
+                    border: 0px;
+                }
+                .ui-dropdown-panel{
+                    border-color: #296FDE;
+                    .ui-dropdown-list{
+                        background: #184088;
+                        color: #fff;
+                    }
+                    .ui-dropdown-item:not(.ui-state-highlight):hover{
+                        background: #296FDE;
+                        color: #fff;
+                    }
+                }
+            }
+        } 
+        p-multiselect{
+            .ui-multiselect {
+                width: 10vw !important;
+                border-color: #296FDE;
+                .ui-multiselect-label{
+                    background: #184088;
+                    border: 1px solid #296FDE;
+                    color: #fff;
+                }
+                .ui-multiselect-trigger{
+                    background: transparent;
+                    color: #fff;
+                    border: 0px;
+                }
+                .ui-multiselect-panel{
+                    border-color: #296FDE;
+                    background: #184088;
+                    .ui-multiselect-list{
+                        background: #184088;
+                        color: #fff;
+                    }
+                    .ui-multiselect-item:not(.ui-state-highlight):hover{
+                        background: #296FDE;
+                        color: #fff;
+                    }
+                }
+            }
+        } 
+    } 
+    .middle {
+        .ui-multiselect .ui-multiselect-label {
+            margin-bottom: 0px;
+        }
+        p-multiselect{
+            .ui-multiselect {
+                width: 100% !important;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                border-color: #296FDE;
+                .ui-multiselect-label{
+                    background: #184088;
+                    border: 1px solid #296FDE;
+                    color: #fff;
+                }
+                .ui-multiselect-trigger{
+                    background: transparent;
+                    color: #fff;
+                    border: 0px;
+                }
+                .ui-multiselect-panel{
+                    border-color: #296FDE;
+                    background: #184088;
+                    .ui-multiselect-list{
+                        background: #184088;
+                        color: #fff;
+                    }
+                    .ui-multiselect-item:not(.ui-state-highlight):hover{
+                        background: #296FDE;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+.handsontable th {
+    font-size: 2rem;
+    line-height: 2em;
+    background: #184088;
+    border: 1px solid #296FDE;
+    color: #fff;
+}
+.handsontable .htColumnHeaders {
+    border: 1px solid #173F97;
+}
+.handsontable thead th.ht__highlight {
+    background-color: #296FDE;
+}
+.handsontable tr {
+    background: transparent;
+}
+.handsontable td {
+    height: 2em !important;
+    font-size: 2em;
+    background: #040f30;
+    border: 1px solid #296FDE;
+    color: #fff;
+    text-align: center;
+}
+.handsontable tr:first-child td {
+    border: 1px solid #296FDE;
+}
+.handsontable tr:first-child th {
+    border: 1px solid #296FDE;
+}
+.handsontable td:first-of-type {
+    border: 1px solid #296FDE;;
+}
+.handsontable th:last-child {
+    border: 1px solid #296FDE;;
+}
+.ht_master {
+    .wtHolder::-webkit-scrollbar {
+        width: 0.5em;
+        height: 0.5em;
+        background: transparent;
+        border: 0;
+        border-radius: 5px;
+    }
+    .wtHolder::-webkit-scrollbar-thumb {
+        width: 0.5em;
+        height: 0.5em;
+        background: #174088;
+        border: 0;
+        border-radius: 5px;
+    }
+    .wtHolder::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}
+.htContextMenu table.htCore {
+    border: 0;
+    border-radius: 5px;
+}
+.htContextMenu table tbody tr td{
+    background: #174088;
+    border: 0;
+    border-radius: 5px;
+}
+.htContextMenu table tbody tr td.current {
+    background: #296FDE;
+    border: 0;
+    border-radius: 5px;
+}
+.handsontable td.area {
+    background-color: #296FDE;
+}
+.dataComing {
+    max-width: 21%;
+}

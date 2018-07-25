@@ -1,0 +1,32 @@
+// .information {
+//     float: left;
+// }
+
+h3 {
+  position: absolute;
+  font-size: 24px;
+  top: 10px;
+  left: 16px;
+  letter-spacing: 4px;
+}
+iframe {
+  width: 99%;
+  height: 88%;
+  position: absolute;
+  top: 10%;
+  border: none;
+  }
+  .leftMap,.rightPart {
+    width:50%;
+    height: 100%;
+    float: left;
+  }
+  .rightTopText{
+    padding-top: 10%;
+    p{
+      color: #fff;
+      text-align: center;
+      font-size: 2rem;
+    }
+  } 
+  

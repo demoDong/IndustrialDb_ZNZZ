@@ -1,0 +1,35 @@
+<do-frame class="network" leftTitle="网络安全" [menubarNoneNw]="false">
+  <do-network class="nw" [ngClass]="{'echartWidth':echartWidth}"  smallTitle="信息安全" [theme]="theme" dataComing="全国互联网信息安全管理系统" [optionType]="pieUp" showEcharts="true" (btnClicked)="btnGroupClicked($event)"
+    [tabItems]="tabItems2" showChangeNorm_type=true>
+    <div class="butList" [ngClass]="{'butListNone': butListNone}">
+      <span *ngFor="let item of btnType, let i = index" [ngClass]="{'btnActive': btnActive[i]}" (click)="onBtnActive($event,i)">{{item}}</span>
+    </div>
+  </do-network>
+  <do-network class="nw netInforSec" smallTitle="网络信息安全总体趋势" [theme]="theme" dataComing="信通院" showEcharts="false">
+    <div class="left">
+      <div>
+        <span>{{enterprises}}</span><br>
+        <span>&nbsp;&nbsp;{{enterprisesNum}}</span>
+      </div>
+      <div>
+          <span>&nbsp;{{domain}}</span><br>
+          <span>{{domainNum}}</span>
+      </div>
+      <div>
+          <span>&#x3000;{{ip}}</span><br>
+          <span>{{ipNum}}</span>
+      </div>
+    </div>
+    <do-echarts [options]="mapUp" [theme]="theme" [nameMap]="nameMap" style="width:39%; margin-left:0%; margin-top:1%; float:left;"></do-echarts> 
+    <div class="right">
+      <h4 style="font-size:1.6rem; margin-left: 2%;">境内访问拦截top5省份</h4>
+      <div class="rightOne">
+
+      </div>
+    </div>
+  </do-network>
+  <do-network class="nw" smallTitle="网络安全" [theme]="theme" dataComing="全国基础电信企业和互联网网络安全监测平台" [optionType]="barDown" showEcharts="true" (btnClicked)="btnGroup1Clicked($event)"
+    [tabItems]="tabItems" showChangeNorm_type=true></do-network>
+  <do-network class="nw" smallTitle="工业互联网安全" [theme]="theme" dataComing="工业互联网安全技术试验与测评重点实验室" [optionType]="pieDown" showEcharts="true" (btnClicked)="btnGroup2Clicked($event)"
+    [tabItems]="tabItems1" showChangeNorm_type=true></do-network>
+</do-frame>

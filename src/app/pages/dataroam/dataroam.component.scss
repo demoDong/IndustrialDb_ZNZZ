@@ -1,0 +1,312 @@
+.bgImg {
+    width: 100%;
+    height: 100vh;
+    background: url('../../../assets/images/bigBastBg.jpg') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.back {
+    width: 6%;
+    height: 4vh;
+    position: absolute;
+    top: 3%;
+    left: 92%;
+}
+
+.dataroam {
+    /deep/ button.rightBtn {
+        visibility: hidden;
+    }
+}
+
+#sublibraryCategory h3 {
+    font-size: 2.4rem;
+}
+
+#largeCategory h3 {
+    font-size: 2.4rem;
+}
+
+.dataroamPage .ui-widget {
+    font-size: 2rem
+}
+
+.ui-g {
+    .ul-g-container {
+        max-height: 65vh;
+        overflow: auto;
+        .ui-g-12 p-checkbox {
+            font-size: 2rem;
+        }
+    }
+    .ul-g-container::-webkit-scrollbar {
+        width: 0.5em;
+        height: 0.5em;
+        background: transparent;
+        border: 0;
+    }
+    .ul-g-container::-webkit-scrollbar-thumb {
+        width: 0.5em;
+        height: 0.5em;
+        background: #174088;
+        border: 0;
+        border-radius: 5px;
+    }
+    .ul-g-container::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+    >p-checkbox {
+        padding-bottom: 0.5em;
+        font-size: 2.4rem;
+    }
+}
+
+#sublibraryCategory {
+    width: 10%;
+    border: 1px solid #174088;
+    float: left;
+    h3 {
+        color: #fff;
+        background: #173F97;
+        padding: 5px;
+        padding-left: 10%;
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+}
+
+#largeCategory {
+    width: 10%;
+    border: 1px solid #174088;
+    float: left;
+    h3 {
+        color: #fff;
+        background: #173F97;
+        padding: 5px;
+        padding-left: 10%;
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+}
+
+#indexTerm {
+    width: 10%;
+}
+
+.content-section {
+    float: left;
+    margin-left: 1%;
+    width: 78%;
+    height: 78vh;
+    background: url('../../../assets/images/implementation.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.search {
+    height: 0px;
+    width: 20%;
+    //position: absolute;
+    //top: 85%;
+    font-size: 2rem;
+    input {
+        padding: 1%;
+        margin-top: 1vh;
+        background: #184088;
+        border: 1px solid #296FDE;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        width: 75%;
+    }
+    button {
+        width: 20%;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        padding: 1%;
+        margin-top: 1vh;
+    }
+}
+
+input::-webkit-input-placeholder {
+    color: #fff;
+}
+input::-moz-placeholder {
+    color: #fff;
+}
+input::-ms-input-placeholder {
+    color: #fff;
+}
+
+.implementation .rightPart {
+    width: 51%;
+    max-height: 72vh;
+    margin-top: 3vh;
+    margin-left: 1%;
+    float: left;
+    .top {
+        width: 100%;
+        height: 4vh;
+        float: left;
+        input {
+            background: #184088;
+            border: 2px solid #296FDE;
+            border-radius: 3px;
+            color: #fff;
+            float: left;
+            width: 18vh;
+            height: 2.3em;
+        }
+        p-dropdown {
+            float: left;
+        }
+        p-multiSelect {
+            float: left;
+            margin-left: 3%;
+        }
+        button {
+            width: 4em;
+            height: 2.2em;
+            background: #184088;
+            border: 2px solid #296FDE;
+            border-radius: 3px;
+            color: #fff;
+            margin-left: 3%;
+        }
+    }
+    .middle {
+        width: 100%;
+        height: 40vh;
+        float: left;
+        .tableTitle {
+            margin: 5px;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            display: none;
+        }
+    }
+    .bottom {
+        width: 100%;
+        height: 25vh;
+        float: left;
+        .butList {
+            width: 100%;
+            float: left;
+            span {
+                float: left;
+                font-size: 2rem;
+                text-align: center;
+                padding: 1%;
+                margin-top: 1vh;
+                border-radius: 5px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        .btnActive {
+            color: #fff !important;
+        }
+        .chartTurn {
+            width: 100%;
+            float: left;
+            height: 20vh;
+        }
+    }
+}
+
+.implementation .dtsrc {
+    float: left;
+    // margin-top: 5%;
+    // margin-left: 40px;
+    // width: 29%;
+    // height: 60vh;
+    margin-top: 9%;
+    margin-left: 7%;
+    width: 22%;
+    height: 60%;
+    background: url('../../../assets/images/dtsrc_bkg.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.dtsrc img:nth-child(1) {
+    height: 5em;
+    position: absolute;
+    top: 77%;
+    left: 76%;
+}
+
+.dtsrc img:nth-child(2) {
+    height: 5em;
+    position: absolute;
+    top: 77%;
+    left: 81%;
+}
+
+.dtsrc img:nth-child(3) {
+    height: 5em;
+    position: absolute;
+    top: 77%;
+    left: 86%;
+}
+
+.dtsrc img:nth-child(4) {
+    height: 5em;
+    position: absolute;
+    top: 77%;
+    left: 92%;
+}
+
+.dtsrc img:nth-child(5) {
+    height: 5em;
+    position: absolute;
+    top: 77%;
+    left: 96%;
+}
+
+.dtsrc img:nth-child(6) {
+    height: 120px;
+    width: 130px;
+    // background: rgba(0, 0, 0, 0.5);
+    // border: 1px solid #296FDE;
+    position: absolute;
+    top: 34%;
+    left: 84%;
+    display: none;
+}
+
+.dtsrc img:nth-child(7) {
+    height: 6em;
+    position: absolute;
+    top: 20%;
+    left: 76%;
+}
+
+.dtsrc img:nth-child(8) {
+    height: 6em;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+}
+
+.dtsrc img:nth-child(9) {
+    height: 6em;
+    position: absolute;
+    top: 20%;
+    left: 92%;
+}
+
+.dtsrc img:nth-child(10) {
+    height: 6em;
+    position: absolute;
+    top: 50%;
+    left: 93%;
+}
+
+.hidden {
+    display: none;
+}
+
+ .ui-chkbox .ui-chkbox-box {
+    font-size: 1em !important;
+}

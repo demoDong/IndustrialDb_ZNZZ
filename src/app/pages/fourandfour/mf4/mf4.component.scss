@@ -1,0 +1,39 @@
+// .information {
+//     float: left;
+// }
+
+li {
+  list-style-type: none;
+  font-family: 微软雅黑;
+  font-size: 20px;
+}
+ul.nglzcl {
+//  margin-bottom: 0px;
+}
+#allmap {
+  width: 100%;
+  height: 100%;
+}
+.detailedInformation {
+  position: absolute;
+  height: 87%;
+  width: 99%;
+  top: 11%;
+  overflow-y: scroll;
+}
+.detailedInformation::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border: 0px;
+}
+.detailedInformation::-webkit-scrollbar-thumb {
+  width: 5px;
+  height: 5px;
+  background: #174088;
+  border: 0px;
+  border-radius: 5px;
+}
+.detailedInformation::-webkit-scrollbar-corner {
+  background: transparent;
+}

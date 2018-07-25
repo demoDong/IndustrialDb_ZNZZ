@@ -1,0 +1,107 @@
+.boxModel {
+  position: relative;
+  color: #fff;
+  width: 48.4vw;
+  height: 38.7vh;
+  background: url('../../../assets/images/componentBtn.png') no-repeat;
+  background-size: 100% 100%;
+  .titleStyle {
+    position: absolute;
+    font-size: 2.4rem;
+    top: 0.8vh;
+    left: 1%;
+    letter-spacing: 4px;
+    color: #72beff;
+    padding-left: 2%;
+    background: url('../../../assets/images/titleBg.png') 0 0 no-repeat;
+    background-size: auto 100%;
+  }
+  #myCharts {
+    left: 3%;
+    position: absolute;
+    width: 94%;
+    height: 80%;
+    top: 10%;
+  }
+  .dataComing {
+    position: absolute;
+    bottom: 0.5vh;
+    font-size: 1.6rem;
+    right: 2%;
+    color: #71BFFF;
+  }
+  .dataComing {
+    position: absolute;
+    bottom: 0.5vh;
+    font-size: 1.6rem;
+    right: 2%;
+    color: #71BFFF;
+  }
+  .changeNorm_type {
+    position: absolute;
+    bottom: 0px;
+    button {
+      background: url('../../../assets/images/footBtn1.png') no-repeat;
+      padding: 5px 20px;
+      background-size: 100% 100%;
+      color: #286EDD;
+      text-align: center;
+      height: 4vh;
+      font-size: 2rem;
+      border: none;
+      margin-left: 16px;
+      outline: none;
+    }
+    button:hover {
+      background-image: url('../../../assets/images/nwBtnFooter.png');
+      color: #fff;
+    }
+    .buttonClick {
+      background-image: url('../../../assets/images/nwBtnFooter.png');
+      color: #fff;
+    }
+    button.more {
+      color: #fff;
+      font-size: 2rem;
+    }
+  }
+  .OnJump {
+    position: absolute;
+    top: 5%;
+    margin-left: 94%;
+    position: absolute;
+    background: url('../../../assets/images/jump.png') no-repeat;
+    padding: 5px 20px;
+    background-size: 100% 100%;
+    color: #286EDD;
+    height: 3.5vh;
+    outline: none;
+  }
+  .buttonClick {
+    background-image: url('../../../assets/images/jump.png');
+    color: #fff;
+  }
+}
+
+.dialog>.ui-widget-content {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+}
+
+.dialog do-echarts {
+  width: 100%;
+  height: 100%;
+  .echart {
+    height: 100%;
+    width: 100%;
+    div {
+      height: 100%;
+      width: 100%;
+      canvas {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

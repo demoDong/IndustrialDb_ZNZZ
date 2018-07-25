@@ -1,0 +1,74 @@
+<do-frame class="bigdatabase" leftTitle="智能制造产业数据库">
+    <div class="ui-g">
+        <div class="ui-g-2 ui-g-nopad,thefirstDiv">
+            <div class="ui-g-12 childLibrary,thefirstDiv1">
+                <p-panel header="子库类别" class="thefirstDiv2">
+                    <p-tree class="treeFirst" [style]="{'height':'20vh','width':'100%','border': 'none !important'}" [value]="files" selectionMode="single"
+                        [(selection)]="selectedFiles"></p-tree>
+                </p-panel>
+            </div>
+            <div class="ui-g-12">
+                <p-panel header="指标大类" class="thesecondDiv">
+                    <p-tree [value]="filesTwo" [style]="{'height':'43vh','width':'100%'}" selectionMode="single" [(selection)]="selectedFilesTwo"
+                        (onNodeSelect)="updateNodeTree($event)"></p-tree>
+                </p-panel>
+            </div>
+        </div>
+        <div class="ui-g-2 ui-g-nopad v-thirdDiv" [ngClass]="{detailDiv: ifhideMaincode}">
+            <div class="ui-g-12" [ngClass]="{multiple: ifMultiple}">
+                <p-panel [style]="{'height':'70vh'}" class="thethirdDiv" header="指标项">
+                    <p-listbox [options]="checkboxArr" [(ngModel)]="selectedCategories" [multiple]="multipleType" [checkbox]="checkboxType" filter="filter"
+                        metaKeySelection="true" optionLabel="label" (onChange)="onChangeimplementation()">
+                    </p-listbox>
+                </p-panel>
+            </div>
+        </div>
+        <div [ngClass]="{'ui-g-5 ui-g-nopad table-5': classa,'ui-g-8 ui-g-nopad table-5': !classa}">
+            <div class="ui-g-12">
+                <p-panel header="" class="thefourDiv">
+                    <div class="ui-g">
+                        <div class="ui-g-3">
+                            <p-multiSelect [style]="{'width':'8em'}" [options]="timeOption" [(ngModel)]="selectedTime" defaultLabel="请选择时间" optionLabel="name"
+                                selectedItemsLabel="已选择 {0} 项"></p-multiSelect>
+                        </div>
+                        <div class="ui-g-3">
+                            <p-multiSelect [style]="{'width':'8em'}" [options]="areaOption" [(ngModel)]="selectedArea" defaultLabel="请选择区域" optionLabel="name"
+                                selectedItemsLabel="已选择 {0} 项"></p-multiSelect>
+                        </div>
+                        <div class="ui-g-3">
+                            <p-multiSelect [style]="{'width':'8em'}" [options]="industryOption" [(ngModel)]="selectedIndustry" defaultLabel="请选择产业" optionLabel="name"
+                                selectedItemsLabel="已选择 {0} 项"></p-multiSelect>
+                        </div>
+                        <div class="ui-g-3">
+                            <button pButton style="width:8em;height:2.6rem;" type="button" (click)="dataQuery()" label="查询"></button>
+                        </div>
+                    </div>
+                </p-panel>
+            </div>
+            <div class="ui-g-12 tableBox" style="padding-top:5vh;" id="dataTable">
+                <p-dataTable *ngIf="overviewShow" [value]="tbodyData" [rows]="16" [paginator]="true" columnResizeMode="fit" #dt>
+                    <p-header>查询结果
+                        <button type="button" pButton icon="fa-file-o" iconPos="left" label="导出" (click)="dt.exportCSV()" style="float:right"></button>
+                    </p-header>
+                    <p-column field="{{item}}" header="{{item}}" *ngFor="let item of theadData"></p-column>
+                </p-dataTable>
+                <p-dataTable *ngIf="detailShow" [value]="tbodyData" [rows]="15" [paginator]="true" [globalFilter]="" columnResizeMode="fit"
+                    class="detail-box" #dt>
+                    <p-header>查询结果
+                        <button type="button" pButton icon="fa-file-o" iconPos="left" label="导出" (click)="dt.exportCSV()" style="float:right"></button>
+                    </p-header>
+                    <p-column field="{{item}}" header="{{item}}" *ngFor="let item of theadData; let i = index" [filter]=" (i === 1) || (i === 2)"
+                        filterPlaceholder="Search"></p-column>
+                </p-dataTable>
+                <p-dataTable *ngIf="effectShow" [value]="tbodyData" [rows]="15" (onPage)="tableReset()" (onFilter)="tableReset()" class="detail-box"
+                    #dt>
+                    <p-header>查询结果
+                        <button type="button" pButton icon="fa-file-o" iconPos="left" label="导出" (click)="dt.exportCSV()" style="float:right"></button>
+                    </p-header>
+                    <p-column field="{{item}}" header="{{item}}" *ngFor="let item of theadData; let i = index" [filter]=" (i === 1 || i === 2)"
+                        filterPlaceholder="Search"></p-column>
+                </p-dataTable>
+            </div>
+        </div>
+    </div>
+</do-frame>
